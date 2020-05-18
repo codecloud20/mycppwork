@@ -1,22 +1,29 @@
 #include <iostream>
 using namespace std;
-int main() {
 
-    int num, i, upto;
-    upto = 20;
+int main()
+{
+    int num, i, flag,j;
 
-        for(num = 2; num <= upto; num++) {
-        for(i = 2; i <= (num / 2); i++) {
+    num = 20;
+    j = 2;
+    while (j < num)
+    {
+        flag = 0;
 
-            if(num % i == 0) {
-                i = num;
+        for(i = 2; i <= j/2; ++i)
+        {
+            if(j % i == 0)
+            {
+                flag = 1;
                 break;
             }
         }
 
-        if(i != num) {
-            cout << num << " ";
-        }
+        if (flag == 0)
+            cout << j << " ";
+
+        ++j;
     }
 
     return 0;
